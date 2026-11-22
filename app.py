@@ -1,0 +1,21 @@
+from flask import Flask
+from prometheus_client import Counter, generate_latest, CONTENT_TYPE_LATEST
+
+app = Flask(__name__)
+REQUESTS = Counter("app_requests_total", "Nombre de requetes", ["endpoint"])
+
+@app.route("/")
+def home():
+    REQUESTS.labels("/").inc()
+    return "Hello DevOps v1"
+
+@app.route("/health")
+def health():
+    return {"status": "ok"}
+
+@app.route("/metrics")
+def metrics():
+    return generate_latest(), 200, {"Content-Type": CONTENT_TYPE_LATEST}
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
