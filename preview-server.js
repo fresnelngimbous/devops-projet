@@ -76,11 +76,11 @@ function isLocalRequest(request) {
 }
 
 function sameOrigin(request) {
-  const origin = request.headers.origin;
-  const host = request.headers.host || "";
-  return isLocalRequest(request) &&
-    (host.startsWith("localhost:") || host.startsWith("127.0.0.1:")) &&
-    origin === `http://${host}`;
+const origin = request.headers.origin;
+const host = request.headers.host || "";
+const allowedHosts = ["localhost", "127.0.0.1", "192.168.56.10"];
+const hostOk = allowedHosts.some((h) => host === h || host.startsWith(`${h}:`));
+return hostOk && origin === `http://${host}`;
 }
 
 function readBody(request, maximumBytes) {
