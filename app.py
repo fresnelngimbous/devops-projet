@@ -7,7 +7,7 @@ REQUESTS = Counter("app_requests_total", "Nombre de requetes", ["endpoint"])
 @app.route("/")
 def home():
     REQUESTS.labels("/").inc()
-    return "Hello DevOps v1"
+    return "Hello DevOps v2"
 
 @app.route("/health")
 def health():
