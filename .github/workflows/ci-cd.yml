@@ -2,7 +2,7 @@ name: CI-CD
 
 on:
   push:
-    branches: [main]
+    branches: [principal]
 
 jobs:
   build-test:
@@ -20,5 +20,9 @@ jobs:
     needs: build-test
     runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v4
-      - run: docker compose up -d --build
+      - name: Deploy from local repo
+        run: |
+          cd /home/vagrant/devops-projet
+          git fetch origin principal
+          git reset --hard origin/principal
+          docker compose up -d --build
