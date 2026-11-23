@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>Mon trajet — FresnelTravel Chauffeur</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="portals.css">
+  <link rel="stylesheet" href="futurist.css">
+  <script src="portal.js" defer></script>
+</head>
+<body class="portal-body">
+  <div class="portal-shell">
+    <aside class="portal-sidebar"><a class="brand" href="connexion.html"><span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 22.5 16 6l10 16.5h-6.2L16 14l-3.8 8.5H6Z" fill="currentColor"/><path d="M8.2 26h15.6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span><span class="brand-name">fresnel<span>travel</span></span></a><div class="workspace-label">ESPACE CHAUFFEUR</div><nav class="main-nav" aria-label="Espace chauffeur"><a class="nav-link active" href="#trajet"><span class="nav-icon">⌂</span> Mon trajet</a><a class="nav-link" href="#position"><span class="nav-icon">◎</span> Partage GPS</a><a class="nav-link" href="#consignes"><span class="nav-icon">▤</span> Consignes</a></nav><div class="portal-sidebar-bottom"><div class="demo-warning compact"><strong>Mode démonstration</strong><p>La position partagée reste sur cet appareil.</p></div><a class="switch-space" href="connexion.html">⇄ <span>Changer d’espace</span></a></div></aside>
+    <main class="portal-main">
+      <header class="portal-header"><div><span class="breadcrumb">FresnelTravel <span>/</span> Espace chauffeur</span><h1>Bonjour, Jean <span class="wave">✦</span></h1><p>Voici votre trajet et le statut du partage de position.</p></div><div class="portal-header-right"><span class="demo-label"><i></i> DÉMO</span><span class="avatar avatar-blue">JM</span></div></header>
+      <div class="demo-banner"><span>ⓘ</span> Le suivi est simulé : aucune position GPS réelle n’est transmise à un client ou à un serveur.</div>
+      <section class="driver-trip-card" id="trajet"><div class="driver-trip-heading"><span class="eyebrow">VOTRE MISSION · <span data-demo-departure-date>--</span></span><span class="status-badge on-time">À l’heure</span></div><h2>Yaoundé <span>→</span> Douala</h2><div class="driver-trip-info"><span><small>DÉPART</small><strong>08:00 · Agence centrale</strong></span><span><small>VÉHICULE</small><strong>FT-204 · Express</strong></span><span><small>PASSAGERS</small><strong>32 / 45</strong></span></div></section>
+      <section class="driver-grid">
+        <article class="panel driver-location-panel" id="position"><div class="panel-heading"><div><h2>Partage de position</h2><p>Les clients voient le dernier point partagé.</p></div><span class="gps-status" id="gps-status"><i></i> ARRÊTÉ</span></div>
+          <div class="gps-illustration"><div class="gps-radar"><span></span><b>⌖</b></div><div><strong id="driver-location">Yaoundé · Agence centrale</strong><small id="driver-coordinates">Position fictive · 3.8480, 11.5021</small></div></div>
+          <div class="gps-actions"><button class="primary-button" id="gps-toggle">▶ Démarrer le partage GPS simulé</button><button class="secondary-button" id="gps-next">Avancer au prochain point →</button></div>
+          <p class="demo-caption">Démo locale uniquement : pour le GPS réel, il faudra une application chauffeur connectée au serveur.</p>
+          <button class="text-button gps-reset" id="gps-reset">Réinitialiser la simulation</button>
+        </article>
+        <article class="panel driver-route-panel"><div class="panel-heading"><div><h2>Étapes du trajet</h2><p>Progression simulée vers Douala.</p></div></div><div class="driver-stops"><div class="driver-stop active"><i>✓</i><span><strong>Yaoundé</strong><small>Agence centrale · départ</small></span><b>08:00</b></div><div class="driver-stop"><i>2</i><span><strong>Mbankomo</strong><small>Point de passage</small></span><b>08:45</b></div><div class="driver-stop"><i>3</i><span><strong>Boumnyebel</strong><small>Point de passage</small></span><b>09:45</b></div><div class="driver-stop"><i>4</i><span><strong>Edéa</strong><small>Point de passage</small></span><b>10:45</b></div><div class="driver-stop"><i>5</i><span><strong>Douala</strong><small>Gare routière · arrivée</small></span><b>11:30</b></div></div></article>
+      </section>
+      <section class="panel consignes-panel" id="consignes"><span class="consigne-icon">✦</span><div><strong>Avant le départ</strong><p>Vérifiez les billets, confirmez l’embarquement avec votre agent et démarrez le partage de position lorsque le bus prend la route.</p></div><a href="agent.html" class="text-button">Espace agent →</a></section>
+      <footer class="portal-footer">© <span data-year></span> FresnelTravel · Conduisez prudemment.</footer>
+    </main>
+  </div>
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+</body>
+</html>

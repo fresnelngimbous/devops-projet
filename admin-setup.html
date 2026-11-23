@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f5f7fb"><title>Créer l’administrateur — FresnelTravel</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="portals.css"><link rel="stylesheet" href="futurist.css"><script src="auth.js" defer></script></head>
+<body class="portal-body">
+  <header class="portal-topbar"><a class="brand portal-brand" href="connexion.html"><span class="brand-mark">FT</span><span class="brand-name">fresnel<span>travel</span></span></a><span class="demo-label"><i></i> CONFIGURATION INITIALE</span></header>
+  <main class="portal-login auth-page">
+    <div class="eyebrow"><span class="live-dot"></span> CRÉATION UNIQUE DU COMPTE</div>
+    <h1>Protégez votre espace admin</h1><p class="login-subtitle">Le premier compte est créé une seule fois sur ce serveur.</p>
+    <form class="auth-card" id="admin-setup-form">
+      <label class="form-field"><span>Adresse e-mail administrateur</span><input id="setup-email" type="email" autocomplete="username" required placeholder="admin@fresneltravel.cm"></label>
+      <label class="form-field"><span>Mot de passe (12 caractères minimum)</span><input id="setup-password" type="password" autocomplete="new-password" minlength="12" required placeholder="Choisissez un mot de passe fort"></label>
+      <label class="form-field"><span>Confirmer le mot de passe</span><input id="setup-password-confirm" type="password" autocomplete="new-password" minlength="12" required placeholder="Confirmez votre mot de passe"></label>
+      <p class="auth-error" id="setup-error" role="alert"></p>
+      <button class="primary-button auth-submit" type="submit">Créer mon compte sécurisé <span>→</span></button>
+    </form>
+    <p class="auth-security-note">Le mot de passe est haché côté serveur et n’est jamais enregistré en clair. N’utilisez pas un mot de passe partagé ou réutilisé.</p>
+    <a class="switch-space auth-back" href="admin-login.html">← Retour à la connexion</a>
+  </main>
+</body>
+</html>

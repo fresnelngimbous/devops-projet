@@ -1,0 +1,213 @@
+:root {
+  --ink: #17233c;
+  --muted: #78869d;
+  --blue: #4667ff;
+  --cyan: #00cbe8;
+  --green: #10a984;
+  --line: #e6ebf4;
+  --canvas: #f0f3f9;
+  --surface: #ffffff;
+}
+
+body {
+  background:
+    radial-gradient(ellipse at 86% 0%, #dfeeff 0, transparent 30rem),
+    radial-gradient(ellipse at 5% 48%, #e8f7ff 0, transparent 25rem),
+    #f2f5fa;
+  color: var(--ink);
+}
+
+body:before {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(#8093b20a 1px, transparent 1px), linear-gradient(90deg, #8093b20a 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: linear-gradient(to bottom, #000 0, transparent 75%);
+}
+
+.sidebar,
+.portal-sidebar {
+  color: #eaf1ff;
+  background: linear-gradient(178deg, #101b32, #0b1325 76%);
+  border-color: #1c2a43;
+  box-shadow: 12px 0 42px #192c4b14;
+}
+
+.brand { color: #f4f7ff; }
+.brand-name span { color: #6de7ff; }
+.brand-mark { background: linear-gradient(145deg, #4774ff, #6549e9); box-shadow: 0 0 24px #4774ff55; }
+.workspace-label { color: #7587a5; }
+.nav-link { color: #a7b3c8; }
+.nav-link:hover { color: #fff; background: #ffffff0b; }
+.nav-link.active { color: #fff; background: linear-gradient(100deg, #3458e94a, #00cbe814); box-shadow: inset 2px 0 #53deff; }
+.nav-count { color: #75e8ff; background: #ffffff13; }
+.sidebar-divider { background: #ffffff14; }
+.help-card { border-color: #263653; background: linear-gradient(145deg, #172642, #101a2d); }
+.help-icon { color: #67e4ff; }
+.help-card strong,.profile-copy strong { color: #f1f5ff; }
+.help-card p,.profile-copy small { color: #a3b0c5; }
+.help-card a { color: #70e4ff; }
+.profile-button { border-color: #ffffff17; }
+.profile-more { color: #a1afc5; }
+.avatar-admin,.user-avatar { background: #253963; color: #89dfff; }
+
+.main-content,.portal-main {
+  background: transparent;
+}
+.topbar,.portal-header { border-color: #dfe5ef; }
+.breadcrumb { color: #8995a8; }
+.breadcrumb strong { color: #43516a; }
+.date-pill,.icon-button { border-color: #e1e7f0; box-shadow: 0 3px 12px #253c6508; }
+.page-heading h1,.portal-header h1 { color: #17233c; }
+.eyebrow { color: #7385a1; }
+.page-heading p,.portal-header p { color: #7e8ba0; }
+.live-dot { background: #05b99c; box-shadow: 0 0 0 4px #05b99c1a, 0 0 13px #05b99c60; }
+
+.primary-button {
+  background: linear-gradient(112deg, #4066f5, #634dea);
+  box-shadow: 0 7px 19px #4565e93b, inset 0 1px #ffffff38;
+}
+.primary-button:hover {
+  background: linear-gradient(112deg, #3159e8, #5841da);
+  box-shadow: 0 8px 25px #4565e95c;
+}
+.secondary-button,.filter-button,.pagination-button,.swap-cities {
+  border-color: #e0e6f0;
+  box-shadow: 0 2px 8px #253c6508;
+}
+.text-button { color: #4365e8; }
+
+.stat-card,.panel {
+  border-color: #e3e9f2;
+  border-radius: 12px;
+  box-shadow: 0 7px 24px #20375b0a, 0 1px 3px #20375b08;
+}
+.stat-card:after,.client-trip-card:after,.agent-depart-card:after,.driver-trip-card:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 18px;
+  right: 18px;
+  height: 2px;
+  border-radius: 0 0 5px 5px;
+  background: linear-gradient(90deg, #4a70ff, #00d3e9, transparent);
+  opacity: .7;
+}
+.stat-card { border-radius: 11px; }
+.stat-icon { box-shadow: inset 0 1px #ffffffbb; }
+.stat-value { color: #1a2842; }
+.panel-heading h2 { color: #202d45; }
+.panel-heading p { color: #8491a5; }
+.heading-dot { box-shadow: 0 0 0 4px #4667ff19, 0 0 12px #4667ff74; }
+.departure-row,.popular-route,.fleet-row,.driver-row { border-color: #edf0f5; }
+.route-line { border-color: #b6c8ed; }
+.route-names strong,.popular-copy strong,.fleet-bus strong,.fleet-route strong,.driver-copy strong { color: #35435c; }
+.departure-time,.departure-meta strong,.popular-value strong { color: #273650; }
+.on-time,.table-status.paid,.table-status.issued { box-shadow: inset 0 0 0 1px #159d7315; }
+.status-badge { border-radius: 20px; }
+.search-box:focus-within { border-color: #8299fa; box-shadow: 0 0 0 3px #4667ff14; }
+td { border-color: #edf0f5; }
+thead { background: #f7f9fc; }
+.table-footer strong { color: #3c4a62; }
+.operations-grid .panel,.dashboard-grid .panel { box-shadow: 0 8px 26px #20375b0b; }
+
+.portal-topbar {
+  border-color: #e0e6f0;
+  background: #ffffffd9;
+  box-shadow: 0 4px 18px #253c6508;
+  backdrop-filter: blur(14px);
+}
+.portal-topbar .brand { color: #17233c; }
+.portal-login .eyebrow { color: #60728f; }
+.portal-login h1 { color: #17233c; }
+.portal-login h1 span { color: #4567f2; }
+.portal-login .role-card {
+  border-color: #e2e8f1;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px #20375b0a;
+}
+.portal-login .role-card:hover { border-color: #8da6ff; box-shadow: 0 10px 28px #4667ff1c; }
+.portal-login .role-icon { box-shadow: inset 0 1px #ffffffc7; }
+.demo-warning { border-color: #f1e4c4; box-shadow: 0 5px 18px #8e6e2610; }
+.demo-label { box-shadow: inset 0 0 0 1px #e8d9b8; }
+
+.portal-header .breadcrumb { color: #8591a4; }
+.portal-header .breadcrumb span { color: #b3bdcc; }
+.demo-banner { border-color: #dce5fa; background: linear-gradient(100deg, #edf2ff, #effbff); color: #60728e; }
+.demo-banner>span { color: #4567f2; }
+.client-trip-card,.agent-depart-card,.driver-trip-card {
+  position: relative;
+  overflow: hidden;
+  border-color: #1e3457;
+  border-radius: 14px;
+  background:
+    radial-gradient(ellipse at 93% -24%, #4774ff7a, transparent 48%),
+    radial-gradient(ellipse at 56% 140%, #05c5df25, transparent 46%),
+    linear-gradient(116deg, #111e37, #182844 70%, #132039);
+  box-shadow: 0 15px 34px #14244124, inset 0 1px #ffffff10;
+}
+.client-trip-card .eyebrow,.agent-depart-card .eyebrow,.driver-trip-card .eyebrow { color: #8eabd2; }
+.client-trip-card h2,.agent-depart-card h2,.driver-trip-card h2 { color: #f4f7ff; }
+.trip-card-top h2 span,.agent-depart-card h2 span,.driver-trip-card h2 span { color: #6edcf1; }
+.client-trip-card .trip-card-top p,.agent-depart-card p { color: #b6c3d8; }
+.trip-card-date { border-color: #ffffff1a; background: #ffffff0e; }
+.trip-card-date strong { color: #f3f6ff; }
+.trip-card-date small { color: #b0bfd5; }
+.trip-info-strip,.driver-trip-info { border-color: #ffffff1c; }
+.trip-info-strip>span { color: #78ddf0; }
+.trip-info-strip small,.driver-trip-info small { color: #91a6c3; }
+.trip-info-strip strong,.driver-trip-info strong { color: #edf3ff; }
+.agent-depart-stats strong { color: #f4f7ff; }
+.agent-depart-stats small { color: #9fb0ca; }
+.agent-depart-card .status-badge { background: #2f4a79; color: #b5cdff; }
+.driver-trip-card .status-badge { background: #19493f; color: #86e8c1; }
+
+.client-columns .panel,.ticket-panel,.agent-passengers-panel,.driver-location-panel,.driver-route-panel,.boarding-panel,.consignes-panel {
+  border-radius: 12px;
+  box-shadow: 0 8px 25px #20375b0b;
+}
+.tracking-map { border-color: #e1e9f3; background: radial-gradient(ellipse at 35% 45%, #e7f2ff, #f3f7fc 72%); }
+.map-road-outline { stroke: #d5e0f0; }
+.map-road { stroke: #fff; }
+.map-progress { stroke: #4367f5; filter: drop-shadow(0 1px 3px #4367f560); }
+.map-stop { stroke: #94a6c0; }
+.map-stop.destination { stroke: #08ad8c; }
+.map-label { fill: #62728b; }
+.bus-marker { fill: #4667ff; }
+.bus-marker-halo { fill: #4667ff24; stroke: #4667ff50; }
+.current-location strong,.eta-box strong { color: #263650; }
+.tracking-live { color: #9c7228; }
+.tracking-live i { box-shadow: 0 0 0 3px #e6a5441f; }
+.route-progress i { background: linear-gradient(90deg, #4667ff, #00cbe8); box-shadow: 0 0 9px #00cbe870; }
+.reminder-highlight { border: 1px solid #e8edf5; background: linear-gradient(120deg, #f6f8fc, #f2f7ff); }
+.reminder-toggle i { box-shadow: inset 0 1px 2px #17233c12; }
+.client-ticket { border-color: #d8e1ef; background: linear-gradient(145deg, #fbfcff, #f5f8fe); }
+.mini-mark { background: linear-gradient(145deg, #4774ff, #6549e9); box-shadow: 0 0 12px #4774ff45; }
+.client-ticket-route { border-color: #dfe6f0; }
+.client-ticket-route>span strong { color: #263650; }
+.client-ticket-footer strong { color: #3f4e67; }
+.tracking-details,.client-ticket-footer,.trip-info-strip { color: var(--ink); }
+.gps-status { border-radius: 20px; }
+.gps-status.active { box-shadow: 0 0 0 3px #10a98417; }
+.gps-radar { border-color: #ccd9ff; background: radial-gradient(circle, #f7faff, #eaf0ff); box-shadow: 0 0 30px #4667ff17; }
+.gps-radar>b { color: #4567f2; }
+.gps-illustration { border-color: #e2e8f2; background: radial-gradient(circle at 30%, #eef4ff, #fbfcfe 70%); }
+.gps-actions .primary-button { background: linear-gradient(112deg, #4066f5, #634dea); }
+.driver-stop.active>i { box-shadow: 0 0 0 4px #4667ff19, 0 0 12px #4667ff51; }
+.boarding-check { box-shadow: 0 0 0 4px #10a98414; }
+
+@media (max-width: 800px) {
+  .portal-sidebar { box-shadow: 0 8px 24px #14244110; }
+  .portal-sidebar>.main-nav .nav-link { border-radius: 7px; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .brand-mark { animation: brand-glow 4s ease-in-out infinite alternate; }
+  @keyframes brand-glow {
+    from { box-shadow: 0 0 15px #4774ff3d; }
+    to { box-shadow: 0 0 25px #4774ff73, 0 0 38px #00cbe81a; }
+  }
+}

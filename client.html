@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>Mon voyage — FresnelTravel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="portals.css">
+  <link rel="stylesheet" href="futurist.css">
+  <script src="portal.js" defer></script>
+</head>
+<body class="portal-body">
+  <div class="portal-shell">
+    <aside class="portal-sidebar">
+      <a class="brand" href="connexion.html"><span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 22.5 16 6l10 16.5h-6.2L16 14l-3.8 8.5H6Z" fill="currentColor"/><path d="M8.2 26h15.6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span><span class="brand-name">fresnel<span>travel</span></span></a>
+      <div class="workspace-label">ESPACE VOYAGEUR</div>
+      <nav class="main-nav" aria-label="Espace client"><a class="nav-link active" href="#voyage"><span class="nav-icon">⌂</span> Mon voyage</a><a class="nav-link" href="#billet"><span class="nav-icon">▤</span> Mon billet</a><a class="nav-link" href="#suivi"><span class="nav-icon">◎</span> Suivi du bus</a><a class="nav-link" href="#rappels"><span class="nav-icon">♧</span> Notifications</a></nav>
+      <div class="portal-sidebar-bottom"><div class="demo-warning compact"><strong>Mode démonstration</strong><p>Le suivi GPS et les e-mails sont simulés.</p></div><a class="switch-space" href="connexion.html">⇄ <span>Changer d’espace</span></a></div>
+    </aside>
+    <main class="portal-main">
+      <header class="portal-header"><div><span class="breadcrumb">FresnelTravel <span>/</span> Espace client</span><h1>Bonjour, Nadia <span class="wave">✦</span></h1><p>Retrouvez votre billet et suivez votre voyage.</p></div><div class="portal-header-right"><span class="demo-label"><i></i> DÉMO</span><span class="avatar avatar-yellow">NF</span></div></header>
+      <div class="demo-banner"><span>ⓘ</span> Les données de ce voyage sont fictives. Les changements de position sont simulés par l’espace chauffeur.</div>
+      <section class="client-trip-card" id="voyage">
+        <div class="trip-card-top"><div><span class="eyebrow">VOTRE PROCHAIN VOYAGE</span><h2>Yaoundé <span>→</span> Douala</h2><p>Bus express FT-204 <span class="status-badge on-time">À l’heure</span></p></div><span class="trip-card-date"><strong data-demo-date>--</strong><small>Départ · 08:00</small></span></div>
+        <div class="trip-info-strip"><span>⌖ <span><small>Gare de départ</small><strong>Agence centrale, Yaoundé</strong></span></span><span>◷ <span><small>Durée estimée</small><strong>3 h 30</strong></span></span><span>▣ <span><small>Votre siège</small><strong>A12 · Express</strong></span></span></div>
+      </section>
+      <section class="client-columns">
+        <article class="panel live-tracking-panel" id="suivi">
+          <div class="panel-heading"><div><h2><span class="heading-dot"></span> Suivi de votre bus</h2><p>Position partagée par votre chauffeur.</p></div><span class="tracking-live"><i></i> SIMULATION GPS</span></div>
+          <div class="tracking-map">
+            <svg class="route-map" viewBox="0 0 640 220" role="img" aria-label="Carte schématique de la route entre Yaoundé et Douala">
+              <path class="map-road-outline" d="M42 154 C104 153 94 83 180 91 S268 180 337 136 S427 57 483 89 S547 142 599 66"/>
+              <path class="map-road" d="M42 154 C104 153 94 83 180 91 S268 180 337 136 S427 57 483 89 S547 142 599 66"/>
+              <path class="map-progress" id="map-progress" d="M42 154 C104 153 94 83 180 91 S268 180 337 136 S427 57 483 89 S547 142 599 66" pathLength="100"/>
+              <circle class="map-stop" cx="42" cy="154" r="7"/><circle class="map-stop" cx="180" cy="91" r="6"/><circle class="map-stop" cx="337" cy="136" r="6"/><circle class="map-stop" cx="483" cy="89" r="6"/><circle class="map-stop destination" cx="599" cy="66" r="7"/>
+              <circle class="bus-marker-halo" id="bus-marker-halo" cx="42" cy="154" r="15"/><circle class="bus-marker" id="bus-marker" cx="42" cy="154" r="9"><title>Position simulée du bus</title></circle>
+              <text class="map-label" x="30" y="185">YAOUNDÉ</text><text class="map-label" x="151" y="72">MBANKOMO</text><text class="map-label" x="298" y="164">BOUMNYEBEL</text><text class="map-label" x="458" y="68">EDÉA</text><text class="map-label" x="565" y="42">DOUALA</text>
+            </svg>
+          </div>
+          <div class="tracking-details"><div class="current-location"><span class="location-pulse"></span><span><small>DERNIÈRE POSITION SIMULÉE</small><strong id="client-location">Yaoundé · Agence centrale</strong><small id="location-updated">Position de démonstration</small></span></div><div class="eta-box"><small>ARRIVÉE ESTIMÉE</small><strong>11:30</strong><span>À l’heure</span></div></div>
+          <div class="route-progress-labels"><span>Yaoundé</span><strong id="progress-label">Départ imminent</strong><span>Douala</span></div><div class="route-progress"><i id="route-progress-bar"></i></div>
+        </article>
+        <article class="panel reminder-panel" id="rappels">
+          <div class="panel-heading"><div><h2>Rappel de départ</h2><p>Ne manquez pas votre bus.</p></div><span class="reminder-icon">♧</span></div>
+          <div class="reminder-highlight"><span class="reminder-clock">◷</span><span><strong>1 heure avant le départ</strong><small>Le rappel sera programmé pour votre adresse e-mail.</small></span></div>
+          <label class="reminder-toggle"><span><strong>Activer le rappel</strong><small>Notification prévue par e-mail</small></span><input type="checkbox" id="reminder-toggle" checked><i></i></label>
+          <p class="email-destination">✉ Nadia Fouda · nadia@example.com</p>
+          <button class="secondary-button full-button" id="simulate-reminder">Tester le rappel (simulation)</button>
+          <p class="demo-caption">Aucun e-mail n’est envoyé dans cette démo.</p>
+        </article>
+      </section>
+      <section class="panel ticket-panel" id="billet">
+        <div class="panel-heading"><div><h2>Votre billet numérique</h2><p>Gardez votre référence à portée de main.</p></div><span class="table-status paid">● Billet confirmé</span></div>
+        <div class="client-ticket"><div class="client-ticket-brand"><span class="brand-mark mini-mark">FT</span><span>FRESNELTRAVEL<small>BILLET DE VOYAGE</small></span></div><span class="ticket-code">FT-20481</span><div class="client-ticket-route"><span><small>DÉPART</small><strong>Yaoundé</strong><small>08:00 · Agence centrale</small></span><b>→</b><span><small>ARRIVÉE</small><strong>Douala</strong><small>11:30 · Gare routière</small></span></div><div class="client-ticket-footer"><span>PASSAGÈRE<strong>Nadia Fouda</strong></span><span>SIÈGE<strong>A12</strong></span><span>BUS<strong>FT-204</strong></span><span>PRIX<strong>18 000 FCFA</strong></span></div></div>
+      </section>
+      <section class="panel client-gallery" id="photos" hidden><div class="panel-heading"><div><h2>FresnelTravel en images</h2><p>Nos bus, nos agences et vos destinations.</p></div></div><div class="client-image-grid" id="client-image-grid"></div></section>
+      <footer class="portal-footer">© <span data-year></span> FresnelTravel · Votre voyage, en toute sérénité.</footer>
+    </main>
+  </div>
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+</body>
+</html>

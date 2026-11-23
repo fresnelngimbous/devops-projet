@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f5f7fb"><title>Connexion admin — FresnelTravel</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="portals.css"><link rel="stylesheet" href="futurist.css"><script src="auth.js" defer></script></head>
+<body class="portal-body">
+  <header class="portal-topbar"><a class="brand portal-brand" href="connexion.html"><span class="brand-mark">FT</span><span class="brand-name">fresnel<span>travel</span></span></a><span class="demo-label"><i></i> ESPACE SÉCURISÉ</span></header>
+  <main class="portal-login auth-page">
+    <div class="eyebrow"><span class="live-dot"></span> ACCÈS ADMINISTRATEUR</div>
+    <h1>Connexion sécurisée</h1><p class="login-subtitle">Connectez-vous pour gérer votre réseau FresnelTravel.</p>
+    <form class="auth-card" id="admin-login-form">
+      <label class="form-field"><span>Adresse e-mail</span><input id="admin-email" type="email" autocomplete="username" required placeholder="admin@fresneltravel.cm"></label>
+      <label class="form-field"><span>Mot de passe</span><input id="admin-password" type="password" autocomplete="current-password" required placeholder="Votre mot de passe"></label>
+      <p class="auth-error" id="auth-error" role="alert"></p>
+      <button class="primary-button auth-submit" type="submit">Se connecter <span>→</span></button>
+    </form>
+    <p class="setup-link-wrap" id="setup-link-wrap" hidden>Première utilisation ? <a href="admin-setup.html">Créer le premier compte administrateur</a></p>
+    <p class="auth-security-note">Connexion protégée par le serveur · Cookies de session sécurisés · Pas de mot de passe intégré au code.</p>
+    <a class="switch-space auth-back" href="connexion.html">← Retour à FresnelTravel</a>
+  </main>
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+</body>
+</html>

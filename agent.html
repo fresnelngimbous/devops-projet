@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>Opérations de gare — FresnelTravel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="portals.css">
+  <link rel="stylesheet" href="futurist.css">
+  <script src="portal.js" defer></script>
+</head>
+<body class="portal-body">
+  <div class="portal-shell">
+    <aside class="portal-sidebar"><a class="brand" href="connexion.html"><span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 22.5 16 6l10 16.5h-6.2L16 14l-3.8 8.5H6Z" fill="currentColor"/><path d="M8.2 26h15.6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span><span class="brand-name">fresnel<span>travel</span></span></a><div class="workspace-label">ESPACE AGENCE</div><nav class="main-nav" aria-label="Espace agent"><a class="nav-link active" href="#depart"><span class="nav-icon">⌂</span> Départs du jour</a><a class="nav-link" href="#passagers"><span class="nav-icon">♙</span> Passagers <span class="nav-count" id="agent-count">4</span></a><a class="nav-link" href="#embarquement"><span class="nav-icon">✓</span> Embarquement</a></nav><div class="portal-sidebar-bottom"><div class="demo-warning compact"><strong>Mode démonstration</strong><p>Les ventes sont fictives et locales.</p></div><a class="switch-space" href="connexion.html">⇄ <span>Changer d’espace</span></a></div></aside>
+    <main class="portal-main">
+      <header class="portal-header"><div><span class="breadcrumb">FresnelTravel <span>/</span> Agence de Yaoundé</span><h1>Bonjour, Estelle <span class="wave">✦</span></h1><p>Préparez vos départs et accompagnez vos passagers.</p></div><div class="portal-header-right"><span class="demo-label"><i></i> DÉMO</span><span class="avatar avatar-pink">EN</span></div></header>
+      <div class="demo-banner"><span>ⓘ</span> Espace agent de gare · Les actions de cette page sont enregistrées uniquement dans ce navigateur.</div>
+      <section class="agent-depart-card" id="depart"><div><span class="eyebrow">PROCHAIN DÉPART · <span data-demo-departure-date>--</span>, 08:00</span><h2>Yaoundé <span>→</span> Douala</h2><p>Bus express FT-204 <span class="status-badge boarding">Embarquement ouvert</span></p></div><div class="agent-depart-stats"><span><strong id="agent-boarded-count">1</strong><small>EMBARQUÉS</small></span><span><strong id="agent-remaining-count">3</strong><small>À EMBARQUER</small></span><span><strong>18 000</strong><small>FCFA / BILLET</small></span></div></section>
+      <section class="agent-summary-grid"><article class="stat-card"><div class="stat-top"><span>Départs de l’agence</span><span class="stat-icon mint">⇄</span></div><div class="stat-value">8</div><div class="stat-foot">Prochain départ demain à <strong>08:00</strong></div></article><article class="stat-card"><div class="stat-top"><span>Billets vendus aujourd’hui</span><span class="stat-icon lavender">▤</span></div><div class="stat-value">64</div><div class="stat-foot"><span class="positive">↗ 9,4%</span> vs. hier</div></article><article class="stat-card"><div class="stat-top"><span>À embarquer</span><span class="stat-icon peach">♙</span></div><div class="stat-value" id="agent-unboarded-stat">3</div><div class="stat-foot">Sur le départ FT-204 à 08:00</div></article></section>
+      <section class="panel agent-passengers-panel" id="passagers">
+        <div class="panel-heading"><div><h2>Passagers du départ <span class="reservation-count" id="agent-trip-label">FT-204</span></h2><p>Vérifiez les billets et enregistrez l’embarquement.</p></div><label class="search-box agent-search"><span>⌕</span><input type="search" id="agent-search" placeholder="Rechercher un passager..." aria-label="Rechercher un passager"></label></div>
+        <div class="table-wrap"><table><thead><tr><th>PASSAGER</th><th>BILLET</th><th>SIÈGE</th><th>PAIEMENT</th><th>EMBARQUEMENT</th><th></th></tr></thead><tbody id="agent-passengers">
+          <tr data-name="nadia fouda"><td><div class="passenger"><span class="avatar avatar-yellow">NF</span><span><strong>Nadia Fouda</strong><small>nadia@example.com</small></span></div></td><td>FT-20481</td><td><span class="seat-tag">A12</span></td><td><span class="table-status paid">● Payé</span></td><td><span class="checkin-status">À embarquer</span></td><td><button class="checkin-button">Enregistrer</button></td></tr>
+          <tr data-name="marc kamga"><td><div class="passenger"><span class="avatar avatar-blue">MK</span><span><strong>Marc Kamga</strong><small>marc.kamga@yahoo.fr</small></span></div></td><td>FT-20476</td><td><span class="seat-tag">B04</span></td><td><span class="table-status paid">● Payé</span></td><td><span class="checkin-status">À embarquer</span></td><td><button class="checkin-button">Enregistrer</button></td></tr>
+          <tr data-name="patrick mbarga"><td><div class="passenger"><span class="avatar avatar-green">PM</span><span><strong>Patrick Mbarga</strong><small>patrick.mbarga@outlook.com</small></span></div></td><td>FT-20473</td><td><span class="seat-tag">A06</span></td><td><span class="table-status paid">● Payé</span></td><td><span class="checkin-status checked-in">✓ Embarqué</span></td><td><button class="checkin-button done" disabled>Embarqué</button></td></tr>
+          <tr data-name="estelle ngono"><td><div class="passenger"><span class="avatar avatar-pink">EN</span><span><strong>Estelle Ngono</strong><small>estelle.ngono@gmail.com</small></span></div></td><td>FT-20472</td><td><span class="seat-tag">A08</span></td><td><span class="table-status paid">● Payé</span></td><td><span class="checkin-status">À embarquer</span></td><td><button class="checkin-button">Enregistrer</button></td></tr>
+        </tbody></table><div class="empty-search" id="agent-empty" hidden>Aucun passager trouvé.</div></div>
+      </section>
+      <section class="panel boarding-panel" id="embarquement"><div><span class="boarding-check">✓</span><span><strong>Embarquement guidé</strong><small>Scannez un billet ou utilisez le bouton « Enregistrer » de la liste.</small></span></div><button class="secondary-button" id="agent-reset">Réinitialiser la démo</button></section>
+      <footer class="portal-footer">© <span data-year></span> FresnelTravel · Espace agent de gare</footer>
+    </main>
+  </div>
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+</body>
+</html>

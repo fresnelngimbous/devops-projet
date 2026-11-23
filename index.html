@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <meta name="description" content="FresnelTravel — la nouvelle façon de voyager entre les villes du Cameroun.">
+  <title>FresnelTravel — Vos trajets, en toute simplicité</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="portals.css">
+  <link rel="stylesheet" href="futurist.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell" hidden>
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="FresnelTravel, accueil">
+        <span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 22.5 16 6l10 16.5h-6.2L16 14l-3.8 8.5H6Z" fill="currentColor"/><path d="M8.2 26h15.6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span>
+        <span class="brand-name">fresnel<span>travel</span></span>
+      </a>
+      <div class="workspace-label">ESPACE OPÉRATIONS</div>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <a class="nav-link active" href="#overview" data-section="overview"><span class="nav-icon">⌂</span> Vue d’ensemble</a>
+        <a class="nav-link" href="#reservations" data-section="reservations"><span class="nav-icon">▤</span> Réservations <span class="nav-count" id="reservation-count">8</span></a>
+        <a class="nav-link" href="#trajets" data-section="trajets"><span class="nav-icon">⇄</span> Trajets</a>
+        <a class="nav-link" href="#flotte" data-section="flotte"><span class="nav-icon">▣</span> Ma flotte</a>
+        <a class="nav-link" href="#clients" data-section="clients"><span class="nav-icon">♙</span> Clients</a>
+      </nav>
+      <div class="sidebar-divider"></div>
+      <div class="workspace-label">GESTION</div>
+      <nav class="main-nav" aria-label="Gestion">
+        <a class="nav-link" href="#chauffeurs" data-section="chauffeurs"><span class="nav-icon">♧</span> Chauffeurs</a>
+        <a class="nav-link" href="#rapports" data-section="rapports"><span class="nav-icon">▥</span> Rapports</a>
+        <a class="nav-link" href="#parametres" data-section="parametres"><span class="nav-icon">⚙</span> Paramètres</a>
+      </nav>
+      <div class="sidebar-divider"></div>
+      <div class="workspace-label">AUTRES ESPACES (DÉMO)</div>
+      <nav class="main-nav" aria-label="Autres espaces de démonstration">
+        <a class="nav-link" href="client.html"><span class="nav-icon">♙</span> Espace client</a>
+        <a class="nav-link" href="agent.html"><span class="nav-icon">▤</span> Espace agent</a>
+        <a class="nav-link" href="chauffeur.html"><span class="nav-icon">▣</span> Espace chauffeur</a>
+      </nav>
+      <div class="workspace-label">ADMINISTRATION</div>
+      <nav class="main-nav" aria-label="Administration">
+        <a class="nav-link" href="#photos"><span class="nav-icon">▧</span> Photos & galerie</a>
+      </nav>
+      <button class="switch-space admin-switch" id="admin-logout">⇥ <span>Déconnexion sécurisée</span></button>
+      <div class="sidebar-bottom">
+        <div class="help-card">
+          <div class="help-icon">✦</div>
+          <strong>Besoin d’aide ?</strong>
+          <p>Notre équipe est là pour vous accompagner.</p>
+          <a href="mailto:support@fresneltravel.cm">Contacter le support <span>↗</span></a>
+        </div>
+        <button class="profile-button" id="profile-button">
+          <span class="avatar avatar-admin">FT</span>
+          <span class="profile-copy"><strong>Admin Fresnel</strong><small>Administrateur</small></span>
+          <span class="profile-more">···</span>
+        </button>
+      </div>
+    </aside>
+
+    <main class="main-content" id="overview">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobile-menu" aria-label="Ouvrir le menu">☰</button>
+        <div class="breadcrumb">FresnelTravel <span>/</span> <strong>Vue d’ensemble</strong></div>
+        <div class="topbar-actions">
+          <div class="date-pill"><span>◷</span> <span id="current-date">Aujourd’hui</span></div>
+          <button class="icon-button notification-button" id="notification-button" aria-label="Notifications">♧<i></i></button>
+          <button class="user-avatar">FT</button>
+        </div>
+      </header>
+
+      <section class="page-heading">
+        <div>
+          <div class="eyebrow"><span class="live-dot"></span> VOTRE RÉSEAU, EN DIRECT</div>
+          <h1>Bonjour, Admin <span class="wave">✦</span></h1>
+          <p>Voici ce qui se passe sur votre réseau aujourd’hui.</p>
+        </div>
+        <button class="primary-button" id="new-booking"><span>＋</span> Nouvelle réservation</button>
+      </section>
+      <section class="stats-grid" aria-label="Indicateurs clés">
+        <article class="stat-card">
+          <div class="stat-top"><span>Réservations du jour</span><span class="stat-icon mint">▤</span></div>
+          <div class="stat-value" id="stat-bookings">248 <span class="trend">↗ 12,8%</span></div>
+          <div class="stat-foot">vs. 220 hier <span class="foot-muted">· toutes les agences</span></div>
+          <div class="sparkline spark-green"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </article>
+        <article class="stat-card">
+          <div class="stat-top"><span>Chiffre d’affaires</span><span class="stat-icon lavender">◉</span></div>
+          <div class="stat-value">3,84M <span class="currency">FCFA</span></div>
+          <div class="stat-foot"><span class="positive">↗ 8,2%</span> <span class="foot-muted">vs. la semaine dernière</span></div>
+          <div class="sparkline spark-purple"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </article>
+        <article class="stat-card">
+          <div class="stat-top"><span>Passagers à bord</span><span class="stat-icon peach">♙</span></div>
+          <div class="stat-value">186 <span class="value-caption">passagers</span></div>
+          <div class="stat-foot">Sur <strong>12 bus</strong> actuellement en route</div>
+          <div class="occupancy"><span style="width:72%"></span></div>
+        </article>
+        <article class="stat-card">
+          <div class="stat-top"><span>Trajets aujourd’hui</span><span class="stat-icon blue">⇄</span></div>
+          <div class="stat-value">32 <span class="value-caption">départs</span></div>
+          <div class="stat-foot"><span class="status-dot"></span> <strong>6 prochains départs</strong> dans l’heure</div>
+          <div class="mini-route"><span>YA</span><i></i><span>DO</span><i></i><span>BA</span></div>
+        </article>
+      </section>
+
+      <section class="dashboard-grid">
+        <article class="panel departures-panel" id="trajets">
+          <div class="panel-heading">
+            <div><h2>Départs du jour <span class="heading-dot"></span></h2><p>Suivez vos prochains trajets en temps réel.</p></div>
+            <button class="text-button" data-section-link="trajets">Tous les trajets <span>→</span></button>
+          </div>
+          <div class="departure-list" id="departure-list">
+            <div class="departure-row">
+              <div class="departure-time">08:00<small>À L’HEURE</small></div><div class="route-track"><span class="station-dot"></span><span class="route-line"></span><span class="station-dot end"></span></div>
+              <div class="route-names"><strong>Yaoundé <span>→</span> Douala</strong><small>Express · FT-204 · 45 places</small></div><div class="departure-meta"><strong>32 <small>/ 45 places</small></strong><div class="seat-progress"><i style="width:71%"></i></div></div><span class="status-badge on-time">À l’heure</span>
+            </div>
+            <div class="departure-row">
+              <div class="departure-time">08:30<small>À L’HEURE</small></div><div class="route-track"><span class="station-dot"></span><span class="route-line"></span><span class="station-dot end"></span></div>
+              <div class="route-names"><strong>Douala <span>→</span> Bafoussam</strong><small>Confort · FT-118 · 38 places</small></div><div class="departure-meta"><strong>26 <small>/ 38 places</small></strong><div class="seat-progress"><i style="width:68%"></i></div></div><span class="status-badge boarding">Embarquement</span>
+            </div>
+            <div class="departure-row">
+              <div class="departure-time">09:00<small>À L’HEURE</small></div><div class="route-track"><span class="station-dot"></span><span class="route-line"></span><span class="station-dot end"></span></div>
+              <div class="route-names"><strong>Yaoundé <span>→</span> Bafoussam</strong><small>VIP · FT-309 · 32 places</small></div><div class="departure-meta"><strong>18 <small>/ 32 places</small></strong><div class="seat-progress"><i style="width:56%"></i></div></div><span class="status-badge on-time">À l’heure</span>
+            </div>
+            <div class="departure-row">
+              <div class="departure-time">09:30<small>+ 10 MIN</small></div><div class="route-track"><span class="station-dot"></span><span class="route-line delayed"></span><span class="station-dot end"></span></div>
+              <div class="route-names"><strong>Douala <span>→</span> Kribi</strong><small>Express · FT-087 · 45 places</small></div><div class="departure-meta"><strong>41 <small>/ 45 places</small></strong><div class="seat-progress near-full"><i style="width:91%"></i></div></div><span class="status-badge delayed">Retard · 10 min</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel routes-panel">
+          <div class="panel-heading">
+            <div><h2>Lignes populaires</h2><p>Cette semaine</p></div>
+            <button class="more-button" aria-label="Plus d’options">···</button>
+          </div>
+          <div class="popular-route">
+            <div class="route-avatar route-orange">YA<small>DO</small></div>
+            <div class="popular-copy"><strong>Yaoundé <span>→</span> Douala</strong><small>12 départs / jour</small></div>
+            <div class="popular-value"><strong>1 240</strong><small>passagers</small></div>
+          </div>
+          <div class="popular-route">
+            <div class="route-avatar route-purple">DO<small>BA</small></div>
+            <div class="popular-copy"><strong>Douala <span>→</span> Bafoussam</strong><small>8 départs / jour</small></div>
+            <div class="popular-value"><strong>864</strong><small>passagers</small></div>
+          </div>
+          <div class="popular-route">
+            <div class="route-avatar route-green">YA<small>BE</small></div>
+            <div class="popular-copy"><strong>Yaoundé <span>→</span> Bertoua</strong><small>5 départs / jour</small></div>
+            <div class="popular-value"><strong>527</strong><small>passagers</small></div>
+          </div>
+          <div class="routes-footer"><span class="small-live"></span> 18 lignes actives au Cameroun <a href="#trajets">Voir les lignes <span>→</span></a></div>
+        </article>
+      </section>
+
+      <section class="panel reservations-panel" id="reservations">
+        <div class="panel-heading reservation-heading">
+          <div><h2>Dernières réservations <span class="reservation-count">8</span></h2><p>Gérez vos passagers et leurs billets en un coup d’œil.</p></div>
+          <div class="reservation-actions"><label class="search-box"><span>⌕</span><input id="reservation-search" type="search" placeholder="Rechercher un passager..." aria-label="Rechercher une réservation"></label><button class="filter-button" id="filter-button">☷ <span>Filtrer</span></button><button class="text-button" data-section-link="reservations">Tout voir <span>→</span></button></div>
+        </div>
+        <div class="table-wrap" id="clients">
+          <table>
+            <thead><tr><th>PASSAGER</th><th>TRAJET</th><th>DÉPART</th><th>SIÈGE</th><th>PAIEMENT</th><th>STATUT</th><th></th></tr></thead>
+            <tbody id="reservation-rows">
+              <tr data-search="estelle ngono yaoundé douala"><td><div class="passenger"><span class="avatar avatar-pink">EN</span><span><strong>Estelle Ngono</strong><small>estelle.ngono@gmail.com</small></span></div></td><td>Yaoundé <span class="table-arrow">→</span> Douala</td><td>Aujourd’hui, 08:00</td><td><span class="seat-tag">A12</span></td><td>18 000 <small>FCFA</small></td><td><span class="table-status paid">● Payé</span></td><td><button class="row-more" aria-label="Options pour Estelle Ngono">···</button></td></tr>
+              <tr data-search="marc kamga douala bafoussam"><td><div class="passenger"><span class="avatar avatar-blue">MK</span><span><strong>Marc Kamga</strong><small>marc.kamga@yahoo.fr</small></span></div></td><td>Douala <span class="table-arrow">→</span> Bafoussam</td><td>Aujourd’hui, 08:30</td><td><span class="seat-tag">B04</span></td><td>12 000 <small>FCFA</small></td><td><span class="table-status paid">● Payé</span></td><td><button class="row-more" aria-label="Options pour Marc Kamga">···</button></td></tr>
+              <tr data-search="nadia fouda yaoundé bafoussam"><td><div class="passenger"><span class="avatar avatar-yellow">NF</span><span><strong>Nadia Fouda</strong><small>nadiafouda@gmail.com</small></span></div></td><td>Yaoundé <span class="table-arrow">→</span> Bafoussam</td><td>Aujourd’hui, 09:00</td><td><span class="seat-tag">C08</span></td><td>15 000 <small>FCFA</small></td><td><span class="table-status pending">◷ En attente</span></td><td><button class="row-more" aria-label="Options pour Nadia Fouda">···</button></td></tr>
+              <tr data-search="patrick mbarga yaoundé douala"><td><div class="passenger"><span class="avatar avatar-green">PM</span><span><strong>Patrick Mbarga</strong><small>patrick.mbarga@outlook.com</small></span></div></td><td>Yaoundé <span class="table-arrow">→</span> Douala</td><td>Aujourd’hui, 10:00</td><td><span class="seat-tag">A06</span></td><td>18 000 <small>FCFA</small></td><td><span class="table-status paid">● Payé</span></td><td><button class="row-more" aria-label="Options pour Patrick Mbarga">···</button></td></tr>
+            </tbody>
+          </table>
+          <div class="empty-search" id="empty-search" hidden>Aucune réservation ne correspond à votre recherche.</div>
+        </div>
+        <div class="table-footer"><span>Affichage de <strong id="visible-count">4</strong> sur <strong>248</strong> réservations</span><button class="pagination-button" disabled aria-label="Page précédente">‹</button><button class="pagination-current">1</button><button class="pagination-button" aria-label="Page suivante">›</button></div>
+      </section>
+      <section class="operations-grid" id="flotte">
+        <article class="panel fleet-panel">
+          <div class="panel-heading">
+            <div><h2>Ma flotte <span class="fleet-total">12 bus</span></h2><p>État de vos véhicules et trajets assignés.</p></div>
+            <button class="more-button" aria-label="Plus d’options pour la flotte">···</button>
+          </div>
+          <div class="fleet-list">
+            <div class="fleet-row">
+              <span class="bus-icon">▣</span><span class="fleet-bus"><strong>FT-204 <span class="fleet-status service">En service</span></strong><small>Express · 45 places</small></span><span class="fleet-route"><strong>Yaoundé → Douala</strong><small>Départ 08:00 · 32 passagers</small></span><button class="bus-toggle" data-bus-toggle aria-label="Mettre le bus FT-204 en pause">Ⅱ</button>
+            </div>
+            <div class="fleet-row">
+              <span class="bus-icon">▣</span><span class="fleet-bus"><strong>FT-118 <span class="fleet-status boarding-status">Embarquement</span></strong><small>Confort · 38 places</small></span><span class="fleet-route"><strong>Douala → Bafoussam</strong><small>Départ 08:30 · 26 passagers</small></span><button class="bus-toggle" data-bus-toggle aria-label="Mettre le bus FT-118 en pause">Ⅱ</button>
+            </div>
+            <div class="fleet-row">
+              <span class="bus-icon maintenance-icon">⚙</span><span class="fleet-bus"><strong>FT-052 <span class="fleet-status maintenance-status">Maintenance</span></strong><small>VIP · 32 places</small></span><span class="fleet-route"><strong>Contrôle technique</strong><small>Agence centrale · Yaoundé</small></span><button class="bus-toggle paused" data-bus-toggle aria-label="Remettre le bus FT-052 en service">▶</button>
+            </div>
+          </div>
+        </article>
+        <article class="panel drivers-panel" id="chauffeurs">
+          <div class="panel-heading">
+            <div><h2>Chauffeurs en service</h2><p>Votre équipe sur les routes aujourd’hui.</p></div>
+            <span class="driver-count"><span class="small-live"></span> 8 actifs</span>
+          </div>
+          <div class="driver-list">
+            <div class="driver-row"><span class="avatar avatar-blue">JM</span><span class="driver-copy"><strong>Jean Mbarga</strong><small>FT-204 · Yaoundé → Douala</small></span><a class="driver-call" href="tel:+237699123456" aria-label="Appeler Jean Mbarga">☎</a><span class="driver-live"></span></div>
+            <div class="driver-row"><span class="avatar avatar-green">AN</span><span class="driver-copy"><strong>Alain Nkono</strong><small>FT-118 · Douala → Bafoussam</small></span><a class="driver-call" href="tel:+237677234567" aria-label="Appeler Alain Nkono">☎</a><span class="driver-live"></span></div>
+            <div class="driver-row"><span class="avatar avatar-pink">CM</span><span class="driver-copy"><strong>Clarisse Mvondo</strong><small>FT-309 · Yaoundé → Bafoussam</small></span><a class="driver-call" href="tel:+237688345678" aria-label="Appeler Clarisse Mvondo">☎</a><span class="driver-live"></span></div>
+          </div>
+        </article>
+      </section>
+      <section class="panel public-gallery" id="photos">
+        <div class="panel-heading"><div><h2>Photos & galerie voyage</h2><p>Ajoutez des images de votre flotte, des destinations et de vos agences.</p></div></div>
+        <div class="upload-toolbar">
+          <label class="form-field"><span>Catégorie</span><select id="image-category"><option value="bus">Flotte de bus</option><option value="travel">Voyages</option><option value="agency">Agences et gares</option></select></label>
+          <label class="form-field upload-title-field"><span>Légende</span><input id="image-title" maxlength="80" placeholder="Ex. Notre bus express à Douala"></label>
+          <label class="upload-button primary-button" for="image-files">＋ Ajouter des images</label><input id="image-files" type="file" accept="image/jpeg,image/png,image/webp" multiple hidden>
+        </div>
+        <p class="upload-note">JPG, PNG ou WebP · 5 Mo maximum par fichier · Galerie visible côté client.</p>
+        <div class="admin-image-grid" id="admin-image-grid"><div class="gallery-empty">Chargement des images…</div></div>
+      </section>
+      <footer class="page-footer"><span>© <span id="footer-year"></span> FresnelTravel · Fait avec <span class="footer-heart">♥</span> au Cameroun</span><span><span class="secure-mark">✓</span> Billets numériques · Tarifs en FCFA</span></footer>
+    </main>
+  </div>
+
+  <div class="admin-access-error" id="admin-access-error" hidden role="alert"></div>
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+  <div class="modal-backdrop" id="booking-modal" aria-hidden="true">
+    <section class="booking-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-header"><div><div class="eyebrow">RÉSERVATION DIGITALE</div><h2 id="modal-title">Un billet, en quelques clics.</h2><p>Choisissez votre trajet et le siège qui vous convient.</p></div><button class="modal-close" id="close-modal" aria-label="Fermer">×</button></div>
+      <div class="booking-steps"><span class="step active" data-step-indicator="1"><i>1</i> Trajet</span><b></b><span class="step" data-step-indicator="2"><i>2</i> Siège & passager</span><b></b><span class="step" data-step-indicator="3"><i>3</i> Confirmation</span></div>
+      <div class="booking-step-content" id="step-route">
+        <div class="field-grid"><label class="form-field"><span>Ville de départ</span><select id="departure-city"><option value="Yaoundé">Yaoundé</option><option value="Douala">Douala</option><option value="Bafoussam">Bafoussam</option><option value="Bamenda">Bamenda</option><option value="Garoua">Garoua</option><option value="Bertoua">Bertoua</option><option value="Kribi">Kribi</option><option value="Limbe">Limbe</option><option value="Ebolowa">Ebolowa</option><option value="Buea">Buea</option><option value="Edea">Edea</option><option value="Ngaoundéré">Ngaoundéré</option><option value="Maroua">Maroua</option></select></label><button class="swap-cities" id="swap-cities" aria-label="Inverser les villes">⇄</button><label class="form-field"><span>Ville d’arrivée</span><select id="arrival-city"><option value="Douala">Douala</option><option value="Yaoundé">Yaoundé</option><option value="Bafoussam">Bafoussam</option><option value="Bamenda">Bamenda</option><option value="Garoua">Garoua</option><option value="Bertoua">Bertoua</option><option value="Kribi">Kribi</option><option value="Limbe">Limbe</option><option value="Ebolowa">Ebolowa</option><option value="Buea">Buea</option><option value="Edea">Edea</option><option value="Ngaoundéré">Ngaoundéré</option><option value="Maroua">Maroua</option></select></label><label class="form-field full-field"><span>Date du voyage</span><input type="date" id="travel-date"></label></div>
+        <div class="form-error" id="route-error" role="alert"></div>
+        <div class="available-trips" id="available-trips"></div>
+        <button class="primary-button modal-primary" id="find-trips">Rechercher les départs <span>→</span></button>
+      </div>
+      <div class="booking-step-content" id="step-passenger" hidden>
+        <div class="selected-trip" id="selected-trip"></div>
+        <div class="seat-picker-heading"><strong>Choisissez votre siège</strong><span>Disponible <i></i> · Sélectionné <b></b> · Occupé <em></em></span></div>
+        <div class="seat-layout" id="seat-layout"></div>
+        <div class="field-grid passenger-fields"><label class="form-field"><span>Nom complet</span><input id="passenger-name" autocomplete="name" placeholder="Ex. Estelle Ngono"></label><label class="form-field"><span>Adresse e-mail</span><input id="passenger-email" type="email" autocomplete="email" placeholder="vous@exemple.com"></label><label class="form-field full-field"><span>Téléphone</span><input id="passenger-phone" type="tel" autocomplete="tel" placeholder="+237 6XX XXX XXX"></label></div>
+        <div class="form-error" id="passenger-error" role="alert"></div>
+        <div class="modal-footer"><button class="secondary-button" id="back-to-route">← Retour</button><button class="primary-button" id="confirm-booking">Confirmer la réservation <span>→</span></button></div>
+      </div>
+      <div class="booking-step-content success-step" id="step-success" hidden>
+        <div class="success-icon">✓</div><div class="eyebrow">C’EST TOUT BON !</div><h3>Votre billet est prêt.</h3><p id="success-copy">Votre place est réservée. Bon voyage avec FresnelTravel !</p><div class="ticket-preview" id="ticket-preview"></div><button class="primary-button modal-primary" id="email-ticket">✉ Envoyer le billet par e-mail</button><button class="text-button close-success" id="finish-booking">Terminer <span>→</span></button>
+      </div>
+    </section>
+  </div>
+
+  <div class="notification-popover" id="notification-popover" hidden>
+    <div><strong>Notifications</strong><button id="close-notifications" aria-label="Fermer">×</button></div>
+    <p><span class="notice-dot orange"></span><span><b>Départ imminent</b><small>Yaoundé → Douala · Embarquement à 07:45</small></span></p>
+    <p><span class="notice-dot green"></span><span><b>Nouveau billet vendu</b><small>Estelle Ngono · Yaoundé → Douala</small></span></p>
+    <p><span class="notice-dot purple"></span><span><b>Places bientôt complètes</b><small>Douala → Kribi · 4 sièges disponibles</small></span></p>
+  </div>
+  <script src="admin.js" defer></script>
+</body>
+</html>
